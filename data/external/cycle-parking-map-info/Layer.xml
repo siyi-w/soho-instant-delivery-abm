@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<CycleParkingDataDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" DestinationPlaceType="CyclePark" SourceIdColumn="[CPUniqueID]" SourceNameColumn="[station_name]">
+  <CycleParkingProperties>
+    <CycleParkingPropertyDefinition SourceColumn="[Number_of_parking_spaces]" DestinationKey="NumberOfCycleParkingSpaces" DestinationCategory="Description" DestinationType ="string" />
+    <CycleParkingPropertyDefinition SourceColumn="[Rough_distance_from_closest_sta]" DestinationKey="DistanceFromClosestStationExit" DestinationCategory="Description" DestinationType ="string" />
+    <CycleParkingPropertyDefinition SourceColumn="[Covered]" DestinationKey="Covered" DestinationCategory="Description"  DestinationType ="bool" />
+    <CycleParkingPropertyDefinition SourceColumn="[Type_updated]" DestinationKey="CycleStandType" DestinationCategory="Description" DestinationType ="string" />
+    <CycleParkingPropertyDefinition SourceColumn="[Pump_and_repair_facilities]" DestinationKey="PumpAndRepairFacilities " DestinationCategory="Description" DestinationType ="bool" />
+    <CycleParkingPropertyDefinition SourceColumn="[Correct_as_of]" DestinationKey="CorrectAsOf" DestinationCategory="Time" DestinationType ="string" />
+  </CycleParkingProperties>
+</CycleParkingDataDefinition>

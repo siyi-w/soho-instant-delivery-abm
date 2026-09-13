@@ -1,0 +1,11 @@
+street,schedule,item_no,side,description,hours_code,permitted_hours,max_wait,width_m
+Frith Street,1,9,south-west,"from a point 5m NW of NW kerb-line of Shaftesbury Avenue, NW for 11.8m",A,At any time,20 minutes,2.5
+Dean Street,2,4,south-west,"from a point 9.5m NW of NW kerb-line of Shaftesbury Avenue, NW for 11m",A,At any time,not specified,2.5
+Greek Street,2,5,north-east,"from a point 2.8m NW of party wall of Nos 7/8 to a point 2m SE of party wall of Nos 8/9",A,At any time,30 minutes,1.83
+Kingly Street,2,6,north-east,"from a point 0.7m NW of point opposite party wall of Nos 25/26, NW for 15.2m",J,"Mon-Sat 7:00-11:00",not specified,1.83
+Kingly Street,2,7,north-east,"from a point 1.1m NW of point opposite party wall of Nos 18/19, NW for 11.8m",J,"Mon-Sat 7:00-11:00",not specified,1.83
+Kingly Street,2,8,north-east,"from point opposite party wall of Nos 3/4, SE for 15.7m",J,"Mon-Sat 7:00-11:00",not specified,1.83
+Kingly Street,2,9,north-east,"from point opposite party wall of Nos 11/12, SE for 37.3m",J,"Mon-Sat 7:00-11:00",not specified,1.83
+Kingly Street,2,10,north-east,"from point opposite party wall of Nos 14/15, NW for 13.1m",J,"Mon-Sat 7:00-11:00",not specified,1.83
+Marshall Street,2,12,north-east,"from a point 2m SE of party wall of No 11 and Nos 14-16, SE for 13m",A,At any time,30 minutes,2.0
+Rupert Street,2,16,south-west,"from a point 6m NW of point opposite party wall of Nos 34/36, SE for 13m",I,"Mon-Sat 8:30-18:30",30 minutes,1.83

@@ -1,0 +1,26 @@
+!table
+!version 1000
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 19
+    CPUniqueID Char (8) ;
+    Correct_as_of Char (12) ;
+    Station_Name Char (78) ;
+    Cycle_parking_present_ Char (6) ;
+    Any_Cycle_parking_within_statio Char (6) ;
+    Location_number Float ;
+    Number_of_parking_spaces Float ;
+    Type_updated Char (30) ;
+    Type Char (66) ;
+    Location Char (254) ;
+    Rough_distance_from_closest_sta Char (8) ;
+    Covered_by Char (34) ;
+    Covered Char (6) ;
+    Secure_cycle_storage_available Char (6) ;
+    Secure_storage_type Char (70) ;
+    Pump_and_repair_facilities Char (6) ;
+    Photo_Hyperlink Char (140) ;
+    Lat__MapInfo_ Float ;
+    Long__MapInfo_ Float ;

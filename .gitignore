@@ -4,4 +4,4 @@ __pycache__/
 .env
 .venv/
 venv/
-.ipynb_checkpoints/
+.ipynb_checkpoints/data/external/dft-road-casualty-statistics-*.csv

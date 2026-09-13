@@ -1,0 +1,179 @@
+"count_point_id","region_id","region_name","local_authority_id","local_authority_name","road_name","road_type","start_junction_road_name","end_junction_road_name","easting","northing","latitude","longitude","link_length_km","link_length_miles"
+6119,6,"London",109,"Westminster","A4","Major","Aldwych","LA Boundary",531060,181090,51.51354319,-0.11266010,0.3,0.2
+6120,6,"London",109,"Westminster","A4","Major","Hyde Park Corner","St James St",528900,180220,51.50622100,-0.14408857,0.9,0.6
+6152,6,"London",109,"Westminster","A5","Major","Sussex Gdns","Seymour St",527500,181240,51.51570504,-0.16388112,0.6,0.4
+6426,6,"London",109,"Westminster","A40","Major","Orchard St","Regent St",528500,181100,51.51422052,-0.14952830,0.8,0.5
+6459,6,"London",109,"Westminster","A41","Major","York St","Portman Sq (north)",528000,181700,51.51972609,-0.15651218,0.5,0.3
+6896,6,"London",109,"Westminster","A315","Major","LA Boundary","A4/A3216",527000,179700,51.50197747,-0.17163756,1.7,1.1
+7603,6,"London",109,"Westminster","A3212","Major","A3203","Parliament Square",530203,179258,51.49727725,-0.12567945,0.7,0.4
+7672,6,"London",109,"Westminster","A4201","Major","A5204","A501",528800,181700,51.51954442,-0.14498813,0.8,0.5
+7934,6,"London",109,"Westminster","A3214","Major","B302","A3213",528600,178600,51.49173040,-0.14899903,0.9,0.6
+8083,6,"London",109,"Westminster","A41","Major","A41","A5205",527410,182550,51.52749831,-0.16470398,0.7,0.4
+8448,6,"London",109,"Westminster","A4","Major","Pall Mall","Piccadilly Circus",529610,180500,51.50857509,-0.13376120,0.3,0.2
+16108,6,"London",109,"Westminster","A4","Major","Northumberland Ave","A301",530400,180700,51.51019089,-0.12231019,0.7,0.4
+16142,6,"London",109,"Westminster","A302","Major","A3217","A4",528600,179500,51.49981867,-0.14867121,0.6,0.4
+16435,6,"London",109,"Westminster","A4380","Major","A501","A41 Park Rd",527750,182000,51.52247873,-0.16000475,0.5,0.3
+17015,6,"London",109,"Westminster","A404","Major","LA Boundary","A4207",524000,182440,51.52726805,-0.21387384,1.1,0.7
+17567,6,"London",109,"Westminster","A3203","Major","A3212","LA Boundary",530350,178960,51.49456533,-0.12367301,0.2,0.1
+17572,6,"London",109,"Westminster","A3212","Major","A3216","A202",529800,178030,51.48633396,-0.13193307,1.6,1
+17574,6,"London",109,"Westminster","A3217","Major","A302","A3214",528900,179330,51.49822262,-0.14441367,0.2,0.1
+17638,6,"London",109,"Westminster","A4201","Major","Piccadilly Circus","A40",529100,181000,51.51318518,-0.14092294,0.9,0.6
+17639,6,"London",109,"Westminster","A4202","Major","A4 Hyde Park Corner","Marble Arch",528089,180542,51.50929902,-0.15565075,1.4,0.9
+17641,6,"London",109,"Westminster","A501","Major","A5/A4209","Marylebone Rd",527370,181750,51.52031771,-0.16556940,0.3,0.2
+17691,6,"London",109,"Westminster","A401","Major","Piccadilly Circus","A400",529761,180893,51.51207231,-0.13144200,0.5,0.3
+17917,6,"London",109,"Westminster","A3214","Major","A3217","Buckingham Gate",528970,179400,51.49883576,-0.14338021,0.3,0.2
+18169,6,"London",109,"Westminster","A5204","Major","A5","A41",528000,181174,51.51499894,-0.15670314,0.4,0.2
+18454,6,"London",109,"Westminster","A501","Major","A501","A4201",528800,182200,51.52403788,-0.14480543,0.2,0.1
+18478,6,"London",109,"Westminster","A5","Major","B414","A5205",526000,182930,51.53122946,-0.18488306,1.3,0.8
+18664,6,"London",109,"Westminster","A3214","Major","Horse Guards Road","Parliament Sq",530000,179686,51.50117030,-0.12844457,0.3,0.2
+18738,6,"London",109,"Westminster","A3213","Major","Hobart Place","A3214",528600,178960,51.49496570,-0.14886795,0.4,0.2
+26114,6,"London",109,"Westminster","A4","Major","St James St","Regent Street/ Picc Circus",529395,180534,51.50892987,-0.13684504,0.5,0.3
+26146,6,"London",109,"Westminster","A5","Major","Praed St","A501/A4209",527180,181580,51.51883269,-0.16836775,0.2,0.1
+26429,6,"London",109,"Westminster","A501","Major","Old Marylebone Rd","A41 Gloucester Place",527600,181860,51.52125442,-0.16221634,0.4,0.2
+26432,6,"London",109,"Westminster","A402","Major","Westbourne Street","Marble Arch",527000,180830,51.51213285,-0.17123077,1.1,0.7
+26464,6,"London",109,"Westminster","A41","Major","Gloucester Place","Marylebone Rd",527910,182000,51.52244255,-0.15769979,0.5,0.3
+26465,6,"London",109,"Westminster","A4380","Major","A40","A5204",528030,181100,51.51432712,-0.15629790,0.2,0.1
+27236,6,"London",109,"Westminster","A501","Major","Baker St","Park Crescent (mid-junction)",528000,182004,51.52245813,-0.15640180,0.8,0.5
+27663,6,"London",109,"Westminster","A3212","Major","A302","Northumberland Ave",530150,180000,51.50395768,-0.12616890,0.8,0.5
+27667,6,"London",109,"Westminster","A3217","Major","LA Boundary","Ecclestone St",528340,179000,51.49538421,-0.15259670,0.5,0.3
+27735,6,"London",109,"Westminster","A4206","Major","A4205","A40",526400,181500,51.51828862,-0.17963236,0.3,0.2
+27787,6,"London",109,"Westminster","A5205","Major","A41","LA Boundary",528000,183640,51.53716081,-0.15580745,1.5,0.9
+28121,6,"London",109,"Westminster","A5204","Major","A4201","LA Boundary",529182,181535,51.51797444,-0.13954590,0.4,0.2
+28477,6,"London",109,"Westminster","A4","Major","Piccadilly Circus","Pall Mall East",529730,180540,51.50890706,-0.13201832,0.4,0.2
+28513,6,"London",109,"Westminster","A202","Major","Wilton Rd/Vauxhall Bridge Rd","Bressenden Place",529060,179150,51.49656850,-0.14217576,0.1,0.1
+28514,6,"London",109,"Westminster","A5204","Major","A41","A41",528114,181216,51.51535058,-0.15504586,0.2,0.1
+36071,6,"London",109,"Westminster","A40","Major","LA Boundary",,525432,181677,51.52009490,-0.19351338,2,1.2
+36150,6,"London",109,"Westminster","A5","Major","A5204","Marble Arch",527700,181040,51.51386251,-0.16107277,0.2,0.1
+36435,6,"London",109,"Westminster","A40","Major","A41","A41",528150,181050,51.51385059,-0.15458765,0.2,0.1
+36436,6,"London",109,"Westminster","A402","Major","LA Boundary","Westbourne St/Lancaster Terrace",525962,180603,51.51032491,-0.18626211,1.3,0.8
+36471,6,"London",109,"Westminster","A41","Major","A40","A5204",528200,181100,51.51428860,-0.15384931,0.2,0.1
+36796,6,"London",109,"Westminster","A202","Major","Victoria St/Wilton Rd","Wilton Rd",529080,179000,51.49521590,-0.14194266,0.2,0.1
+37704,6,"London",109,"Westminster","A3212","Major","A202","A3203",530200,178600,51.49136460,-0.12596525,0.8,0.5
+37706,6,"London",109,"Westminster","A202","Major","Buckingham Palace Rd","Victoria St",529050,179270,51.49764922,-0.14227587,0.2,0.1
+37774,6,"London",109,"Westminster","A4201","Major","A40","A5204",528970,181400,51.51680960,-0.14264903,0.2,0.1
+37775,6,"London",109,"Westminster","A4205","Major","A4206","Edgware Rd",527000,181500,51.51815418,-0.17098947,1.1,0.7
+37776,6,"London",109,"Westminster","A4206","Major","A4207","A4205",526000,181300,51.51658047,-0.18546580,1.1,0.7
+37914,6,"London",109,"Westminster","A400","Major","A401","Andrew Borde St",529864,181203,51.51483459,-0.12984439,0.3,0.2
+38167,6,"London",109,"Westminster","A41","Major","A5205","LA Boundary",526997,182978,51.53143769,-0.17050009,1.2,0.7
+38177,6,"London",109,"Westminster","A4","Major","Piccadilly","Waterloo Pl",529470,180208,51.50598298,-0.13588456,0.8,0.5
+38534,6,"London",109,"Westminster","A4","Major","Pall Mall","Northumberland ave",529930,180400,51.50760299,-0.12918958,0.3,0.2
+38630,6,"London",109,"Westminster","A41","Major","Prince Albert Rd","St Johns Wood Road",527143,182845,51.53020959,-0.16844439,0.1,0.1
+38631,6,"London",109,"Westminster","A4","Major","A301","A301/A4200",530668,181000,51.51282508,-0.11833936,0.3,0.2
+39028,6,"London",109,"Westminster","A202","Major","A3213","A3212",529881,178358,51.48926307,-0.13064655,0.2,0.1
+46119,6,"London",109,"Westminster","A4","Major","Haymarket","St Martins Pl",530018,180495,51.50843652,-0.12788727,0.3,0.2
+46120,6,"London",109,"Westminster","A4","Major","A315/A3216","Hyde Park Corner",528000,179760,51.50229134,-0.15721622,0.7,0.4
+46155,6,"London",109,"Westminster","A5","Major","A5205","A501",526780,182004,51.52273303,-0.17397726,0.9,0.6
+46433,6,"London",109,"Westminster","A40","Major","A4201","LA Boundary",529500,181330,51.51605939,-0.13504059,0.7,0.4
+46469,6,"London",109,"Westminster","A4380","Major","Portman Sq (north)","York St",527850,181700,51.51976003,-0.15867296,0.5,0.3
+47088,6,"London",109,"Westminster","A404","Major","A4207","A40",525000,182070,51.52372254,-0.19959722,2.1,1.3
+47661,6,"London",109,"Westminster","A3211","Major","A302","A400",530340,180000,51.50391394,-0.12343292,0.6,0.4
+47665,6,"London",109,"Westminster","A3217","Major","Eccleston St","Grosvenor Place",528600,179260,51.49766180,-0.14875866,0.3,0.2
+47729,6,"London",109,"Westminster","A4207","Major","A404","A4206",525000,181660,51.52003779,-0.19974262,1.3,0.8
+47730,6,"London",109,"Westminster","A4209","Major","Bayswater Rd","A5/A501",527000,181280,51.51617703,-0.17106871,1.1,0.7
+47788,6,"London",109,"Westminster","A5205","Major","A5","A41",527001,182750,51.52938775,-0.17052464,0.8,0.5
+47874,6,"London",109,"Westminster","A400","Major","Trafalgar Sq","A401",530000,180670,51.51001336,-0.12808200,0.6,0.4
+48009,6,"London",109,"Westminster","A3214","Major","Grosvenor Gardens / Victoria Street","Lower Grosvenor Place / Bressender Place",528900,179200,51.49705432,-0.14446114,0.2,0.1
+48010,6,"London",109,"Westminster","A5204","Major","A41","A4201",528500,181330,51.51628751,-0.14944449,1,0.6
+48251,6,"London",109,"Westminster","A501","Major","A5","Old Marylebone Rd",527270,181770,51.52051997,-0.16700272,0.4,0.2
+48517,6,"London",109,"Westminster","A4","Major","Northumberland Ave","St Martins Pl",530070,180460,51.50811003,-0.12715131,0.1,0.1
+48552,6,"London",109,"Westminster","A3211","Major","A400","LA Boundary",531000,180790,51.51086105,-0.11363569,1,0.6
+48553,6,"London",109,"Westminster","A302","Major","Parliament Square","A3211",530239,179670,51.50097154,-0.12500911,0.2,0.1
+48576,6,"London",109,"Westminster","A3216","Major","LA Boundary","A3212 Grosvenor Rd",528561,177902,51.48546636,-0.14981449,0.2,0.1
+48577,6,"London",109,"Westminster","A301","Major","A4","LA Boundary",530650,180750,51.51058254,-0.11869121,0.3,0.2
+48578,6,"London",109,"Westminster","A302","Major","LA Boundary","A3211",530326,179668,51.50093354,-0.12375713,0.2,0.1
+48613,6,"London",109,"Westminster","A4","Major","A301","Strand",530840,181050,51.51323465,-0.11584356,0.2,0.1
+48821,6,"London",109,"Westminster","A3213","Major","A3214","A202",529300,178500,51.49067223,-0.13895830,1.3,0.8
+56117,6,"London",109,"Westminster","A4","Major","Aldwych","Aldwych",530810,180940,51.51225304,-0.11631644,0.4,0.2
+56431,6,"London",109,"Westminster","A40","Major","Regent St","Great Portland St",529080,181250,51.51543647,-0.14111949,0.1,0.1
+56433,6,"London",109,"Westminster","A3214","Major","A3213","Victoria St",528800,179000,51.49527970,-0.14597390,0.3,0.2
+56592,6,"London",109,"Westminster","A202","Major","A3212","LA Boundary",530100,178200,51.48779286,-0.12755215,0.2,0.1
+56625,6,"London",109,"Westminster","A40","Major","Marble Arch","A41 Portman St",528000,181020,51.51361495,-0.15675904,0.3,0.2
+56890,6,"London",109,"Westminster","A302","Major","Bressenden Place","Parliament Square",530000,179550,51.49994809,-0.12849467,1.2,0.7
+57536,6,"London",109,"Westminster","A302","Major","Wilton Rd/Vauxhall Bridge Rd","Buckingham Palace Rd",528947,179161,51.49669312,-0.14379869,0.2,0.1
+57537,6,"London",109,"Westminster","A501","Major","A41","A41",527862,181939,51.52190520,-0.15841341,0.2,0.1
+57910,6,"London",109,"Westminster","A202","Major","Vauxhall Bridge Rd","Victoria St/Vauxhall Bridge Rd",529040,178950,51.49477568,-0.14253683,0.3,0.2
+58136,6,"London",109,"Westminster","A4","Major","Waterloo Pl","Cockspur St",529750,180380,51.50746457,-0.13178914,0.1,0.1
+58172,6,"London",109,"Westminster","A202","Major","Wilton Rd","A3213",529621,178557,51.49111106,-0.13431633,1,0.6
+58173,6,"London",109,"Westminster","A4206","Major","Bishop's Bridge Road roundabout","Edgware Rd",526695,181684,51.51987622,-0.17531680,0.7,0.4
+70181,6,"London",109,"Westminster","A501","Major","A4206","A5/A501",526950,181700,51.51996282,-0.17163769,0.2,0.1
+70190,6,"London",109,"Westminster","A4201","Major","A40","A5204",529080,181350,51.51633516,-0.14108288,0.3,0.2
+70191,6,"London",109,"Westminster","A5204","Major","A4201 Langham Place","A4201 Great Portland St",529000,181480,51.51752171,-0.14218764,0.1,0.1
+70192,6,"London",109,"Westminster","A400","Major","Trafalgar Sq","A3211",530250,180330,51.50690032,-0.12460709,0.4,0.2
+73225,6,"London",109,"Westminster","A4200","Major","A4","LA Boundary",530697,181140,51.51407653,-0.11786980,0.2,0.1
+74534,6,"London",109,"Westminster","A40","Major","LA Boundary","A4206",525432,181677,51.52009490,-0.19351338,2,1.2
+74971,6,"London",109,"Westminster","A302","Major","Buckingham Palace Rd/Victoria St","lower Grosvenor Place",528737,179285,51.49785532,-0.14677700,0.3,0.2
+74972,6,"London",109,"Westminster","A5","Major","A40","Praed St",527100,181660,51.51956964,-0.16949131,0.1,0.1
+74973,6,"London",109,"Westminster","A41","Major","Gloucester Place","Baker St",528050,181300,51.51611998,-0.15593720,0.2,0.1
+74974,6,"London",109,"Westminster","A41","Major","Gloucester Place","Baker St",527900,181810,51.52073729,-0.15791279,0.2,0.1
+74975,6,"London",109,"Westminster","A4380","Major","Seymour St","Portman Sq (north)",528000,181230,51.51550221,-0.15668281,0.1,0.1
+74976,6,"London",109,"Westminster","A41","Major","Portman Sq (north)","Wigmore St",528130,181300,51.51610186,-0.15478488,0.1,0.1
+74977,6,"London",109,"Westminster","A4380","Major","York St","Marylebone Rd",527800,181860,51.52120925,-0.15933521,0.1,0.1
+74978,6,"London",109,"Westminster","A41","Major","Marylebone Rd","York St",527950,181900,51.52153480,-0.15715985,0.1,0.1
+80694,6,"London",109,"Westminster","A4","Major","Haymarket","Trafalgar Square",529900,180470,51.50823896,-0.12959584,0.3,0.2
+81117,6,"London",109,"Westminster","A301","Major","A4","A301",530630,180780,51.51085676,-0.11896814,0.2,0.1
+81118,6,"London",109,"Westminster","A301","Major","A301","LA Boundary",530750,180580,51.50903167,-0.11731403,0.1,0.1
+81119,6,"London",109,"Westminster","A301","Major","A301","LA Boundary",530649,180963,51.51249695,-0.11862671,0.7,0.4
+89351,6,"London",109,"Westminster","A4205","Major","Eastbourne Terrace","A5",526873,181383,51.51713120,-0.17286097,0.7,0.4
+89355,6,"London",109,"Westminster","A4206","Major","A4207","A4205",526045,181326,51.51680411,-0.18480831,1.3,0.8
+90100,6,"London",109,"Westminster","A400","Major","A401","A40",529853,181239,51.51516064,-0.12998957,0.4,0.2
+90168,6,"London",109,"Westminster","A4","Major","Waterloo Pl","Cockspur St",529750,180380,51.50746457,-0.13178914,0.1,0.1
+93117,6,"London",109,"Westminster","A5","Major","A5204","Marble Arch",527700,181040,51.51386251,-0.16107277,0.2,0.1
+93118,6,"London",109,"Westminster","A4","Major","Haymarket","Trafalgar Square",529900,180470,51.50823896,-0.12959584,0.3,0.2
+93119,6,"London",109,"Westminster","A4","Major","Pall Mall","Northumberland ave",529930,180400,51.50760299,-0.12918958,0.3,0.2
+93128,6,"London",109,"Westminster","A400","Major","Trafalgar Sq","A3211",530250,180330,51.50690032,-0.12460709,0.4,0.2
+93176,6,"London",109,"Westminster","A301","Major","A4","A301",530630,180780,51.51085676,-0.11896814,0.2,0.1
+94048,6,"London",109,"Westminster","A4","Major","Aldwych","LA Boundary",530978,181062,51.51331055,-0.11385153,0.2,0.1
+94049,6,"London",109,"Westminster","A4","Major","Aldwych","LA Boundary",531000,181027,51.51299092,-0.11354766,0.3,0.2
+94050,6,"London",109,"Westminster","A4","Major","A4200 Kingsway","Near St Clement Danes Church",530816,181057,51.51330311,-0.11618663,0.2,0.1
+94224,6,"London",109,"Westminster","A4","Major","A301","A301/A4200",530668,181000,51.51282508,-0.11833936,0.3,0.2
+96224,6,"London",109,"Westminster","A501","Major","A5/A4209","Intersection with Old Marylebone Road and Chapel Street",527340,181624,51.51919210,-0.16604707,0.3,0.2
+96225,6,"London",109,"Westminster","A501","Major","Intersection with Old Marylebone Road and Chapel Street","A501 Merylebone Road (dual cwy)",527370,181750,51.52031771,-0.16556940,0.1,0.1
+96226,6,"London",109,"Westminster","A501","Major","A5/A4205","Intersection with Old Marylebone Road and Chapel Street",527232,181670,51.51962982,-0.16758622,0.3,0.2
+97180,6,"London",109,"Westminster","A3214","Major","A3213","Victoria St",528800,179000,51.49527970,-0.14597390,0.2,0.1
+97181,6,"London",109,"Westminster","A302","Major","A3213","Victoria St",528737,179285,51.49785532,-0.14677700,0.1,0.1
+97182,6,"London",109,"Westminster","A302","Major","Buckingham Palace Rd/Victoria St","lower Grosvenor Place",528830,179180,51.49689052,-0.14547629,0.1,0.1
+97183,6,"London",109,"Westminster","A3214","Major","Buckingham Palace Rd/Victoria St","lower Grosvenor Place",528800,179150,51.49662774,-0.14591917,0.1,0.1
+97184,6,"London",109,"Westminster","A3214","Major","Buckingham Palace Rd/Victoria St","lower Grosvenor Place",528865,179130,51.49643321,-0.14499062,0.1,0.1
+97230,6,"London",109,"Westminster","A3213","Major","A3214","A202",529300,178500,51.49067223,-0.13895830,1.2,0.7
+97231,6,"London",109,"Westminster","A3213","Major","A3214","A202",528840,178830,51.49374281,-0.14546004,0.2,0.1
+804527,6,"London",109,"Westminster","U","Minor",,,527609,181432,51.51740596,-0.16224161,,
+804528,6,"London",109,"Westminster","C","Minor",,,525943,181919,51.52215619,-0.18606571,,
+804529,6,"London",109,"Westminster","U","Minor",,,527142,181994,51.52256186,-0.16876582,,
+804530,6,"London",109,"Westminster","U","Minor",,,528969,180418,51.50798468,-0.14302254,,
+811008,6,"London",109,"Westminster","U","Minor",,,527623,181987,51.52239058,-0.16183903,,
+811023,6,"London",109,"Westminster","C","Minor",,,529411,177968,51.48586583,-0.13755523,,
+811064,6,"London",109,"Westminster","B326","Minor",,,529958,179125,51.49613832,-0.12925589,,
+811069,6,"London",109,"Westminster","B402","Minor",,,530388,181166,51.51438151,-0.12231073,,
+811112,6,"London",109,"Westminster","B414","Minor",,,525507,183196,51.53372972,-0.19189194,,
+900012,6,"London",109,"Westminster","U","Minor",,,529760,178610,51.49155551,-0.13229582,,
+930337,6,"London",109,"Westminster","U","Minor",,,524910,182590,51.52841576,-0.20070951,,
+930338,6,"London",109,"Westminster","U","Minor",,,529470,180920,51.51238164,-0.13562323,,
+942317,6,"London",109,"Westminster","B323","Minor",,,530190,178981,51.49479088,-0.12596878,,
+942318,6,"London",109,"Westminster","B413","Minor",,,524503,183076,51.53287335,-0.20640190,,
+942319,6,"London",109,"Westminster","B324","Minor",,,529427,178872,51.49398633,-0.13699373,,
+942320,6,"London",109,"Westminster","B326","Minor",,,529956,179126,51.49614776,-0.12928431,,
+942321,6,"London",109,"Westminster","B506","Minor",,,528973,181712,51.51961283,-0.14249168,,
+942323,6,"London",109,"Westminster","B406","Minor",,,528758,181040,51.51362262,-0.14583416,,
+942324,6,"London",109,"Westminster","U","Minor",,,526829,183014,51.53179895,-0.17290783,,
+942325,6,"London",109,"Westminster","U","Minor",,,529116,178519,51.49088498,-0.14160020,,
+942326,6,"London",109,"Westminster","U","Minor",,,527427,181653,51.51943313,-0.16478335,,
+942327,6,"London",109,"Westminster","U","Minor",,,530909,181211,51.51466556,-0.11479001,,
+942328,6,"London",109,"Westminster","U","Minor",,,526808,183620,51.53724980,-0.17299225,,
+942330,6,"London",109,"Westminster","U","Minor",,,525383,181281,51.51654685,-0.19436009,,
+942331,6,"London",109,"Westminster","U","Minor",,,525504,181376,51.51737379,-0.19258334,,
+942332,6,"London",109,"Westminster","U","Minor",,,525301,182108,51.52399741,-0.19524730,,
+942333,6,"London",109,"Westminster","U","Minor",,,526936,182555,51.52764988,-0.17153143,,
+942334,6,"London",109,"Westminster","U","Minor",,,525525,181822,51.52137740,-0.19212204,,
+942335,6,"London",109,"Westminster","U","Minor",,,525715,180812,51.51225817,-0.18974502,,
+942336,6,"London",109,"Westminster","U","Minor",,,529392,181146,51.51443053,-0.13666372,,
+942337,6,"London",109,"Westminster","U","Minor",,,528585,178732,51.49292009,-0.14916692,,
+942338,6,"London",109,"Westminster","U","Minor",,,527162,180896,51.51268960,-0.16887371,,
+942339,6,"London",109,"Westminster","U","Minor",,,528536,179402,51.49895249,-0.14962843,,
+948098,6,"London",109,"Westminster","U","Minor",,,528500,180000,51.50433487,-0.14992902,,
+948101,6,"London",109,"Westminster","U","Minor",,,529465,179477,51.49941471,-0.13622476,,
+951705,6,"London",109,"Westminster","B414","Minor",,,525102,182479,51.52737573,-0.19798255,,
+951706,6,"London",109,"Westminster","U","Minor",,,527091,181203,51.51546458,-0.16978569,,
+990140,6,"London",109,"Westminster","B507","Minor",,,527207,182194,51.52434465,-0.16775724,,
+990670,6,"London",109,"Westminster","U","Minor",,,528500,178561,51.49140262,-0.15045285,,
+990672,6,"London",109,"Westminster","U","Minor",,,528883,181838,51.52076570,-0.14374206,,
+999990,6,"London",109,"Westminster","B310","Minor",,,528194,179375,51.49878742,-0.15456254,,
