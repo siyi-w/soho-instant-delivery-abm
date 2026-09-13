@@ -1,10 +1,10 @@
 # Soho Instant-Delivery Agent-Based Model
 
 ## Overview
-
-This repository contains the source code for the MSc dissertation
-“Algorithmic Pressure and Micro-spatial Conflicts: An Agent-Based
-Model of Instant Delivery Flows in Soho, London”.
+This repository contains the source code, data-processing pipeline and
+simulation outputs for the MSc dissertation *"Algorithmic Pressure and
+Micro-spatial Conflicts: An Agent-Based Model of Instant Delivery Flows
+in Soho, London"* (Wu, 2026).
 
 The model examines how platform time pressure, rider behaviour and
 street-level spatial constraints interact to generate pavement use,
@@ -15,37 +15,86 @@ relative responses within the model and should not be interpreted as
 predictions of real-world collision or violation rates.
 
 ## Software
-
-- Python: [version]
-- Mesa: [version]
-- GeoPandas: [version]
-- OSMnx: [version]
-- NetworkX: [version]
-- Shapely: [version]
-- pandas: [version]
-- NumPy: [version]
-- Matplotlib: [version]
+The final model was implemented in Python 3.13.7 using Mesa 3.5.1.
+Spatial-data processing and network operations used GeoPandas 1.1.4,
+OSMnx 2.1.0, NetworkX 3.6.1 and Shapely 2.1.2, while pandas 3.0.3 and
+NumPy 2.5.1 were used for data handling and output aggregation.
+Matplotlib 3.10.8 was used for figure generation.
 
 ## Model configuration
-
 - Study area: Soho-centred modelling extent, London
 - Spatial radius: 1,900 m
-- Simulation period: 17:00–20:00
-- Time step: 5 seconds
+- Simulation period: 17:00-20:00 (180 minutes)
+- Time step: 5 seconds (2,160 scheduled updates per run)
 - Number of riders: 300
 - Number of pedestrians: 600
-- Formal repetitions: five fixed random seeds
+- Routing: Dijkstra's shortest-path algorithm, fixed for each journey
+- Formal repetitions: five fixed random seeds (1, 7, 42, 99, 123)
+- Final parameters: congestion_threshold (ct) = 0.3, land_use_threshold
+  (lut) = 0.65
+
+Each formal output records the scenario, parameter configuration,
+random seed, code version, input-data version and execution time. All
+reported experiments use the corrected POI data, the revised
+rider-reallocation procedure and the same five random-seed
+identifiers.
 
 ## Repository structure
+- `src/`: model source code (`agents.py`, `model.py`, `run.py`,
+  `environment.py`, `pedestrian_params.py`)
+- `notebooks/`: exploratory analysis and data-processing notebooks
+- `experiments/`: OpenMOLE experiment configuration files (exploratory;
+  not used to generate the final reported results — see note below)
+- `data/raw/`: raw spatial data (road, bike and walk networks, building
+  footprints, land use, cycle parking, loading bays), including
+  `network_cache/`, intermediate network extracts generated while
+  calibrating the study-area radius
+- `data/processed/`: cleaned data used in the final model — the
+  corrected POI file (`soho_food_pois_r1900_clean.csv`) and the final
+  r=1,900 m study-area boundary
+- `data/archive/`: superseded data versions kept for methodological
+  transparency, including the unfiltered FHRS pull, the pre-fix
+  radius-filtered POI file, and a known-buggy intermediate version
+- `data/review/`: intermediate business-type review files produced
+  while cleaning the POI data
+- `data/external/`: third-party reference datasets (DfT traffic counts
+  and AADF, STATS19 pedestrian/cyclist casualty subset, cycle parking
+  survey, loading bay consolidation document); see note on excluded
+  files below
+- `data/calibration/`: parameter calibration results (land-use
+  threshold sensitivity, micro-hub count scan)
+- `data/analysis_outputs/`: supporting analysis figures and map exports
+- `results/final/`: final S1 (baseline) and S2 (adverse) results,
+  including the parking-provision dose-response sweep, at the final
+  parameter configuration (ct=0.3, lut=0.65)
+- `results/ablation/`: pathway ablation results (see note below)
 
-- `model/`: model agents, scheduling and behavioural mechanisms
-- `data/`: data documentation and preprocessing information
-- `outputs/example/`: example model outputs
-- `requirements.txt`: required Python packages
+### Note on pathway ablation parameters
+The pathway ablation experiments in `results/ablation/` were run using
+an earlier `land_use_threshold` value (0.2), prior to the later
+recalibration to 0.65 used in `results/final/`. This reflects the
+project's actual working order rather than an inconsistency in the
+final analysis; see the dissertation methodology chapter for details.
+
+### Note on excluded external data
+Full national DfT road-safety statistics (casualty, collision and
+vehicle tables, last 5 years) were used for external validation but
+are not included in this repository due to file size (~90-100 MB
+each). They are publicly available from the [DfT Road Safety Data
+portal](https://www.gov.uk/government/statistics/road-accidents-and-safety-statistics).
 
 ## Installation
-
 ```bash
-git clone [repository URL]
-cd soho-instant-delivery-abm
-python3 -m pip install -r requirements.txt
+git clone https://github.com/siyi-w/soho-instant-delivery-abm.git
+cd soho_instant_delivery_abm
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Reproduction
+Formal runs can be reproduced via `src/run.py` with the scenario,
+seed and parameter values encoded in each output filename (e.g.
+`conflicts_S1_baseline_seed42_riders300_peds600_ct0.3_lut0.65.csv`).
+On a computer with an Apple M4 processor and 24 GB of memory, one
+formal run required approximately two minutes.
