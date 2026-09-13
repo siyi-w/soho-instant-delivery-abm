@@ -1,0 +1,115 @@
+// ============================================================
+// 决策矩阵/路径层阈值 —— 单因素敏感性检验
+// 固定场景 S2_adverse/I0(无停车点/暗厨房/打包单)，每次只动一个阈值，
+// 其余留在默认值（跟已锁定的建模假设一致），基准配置只跑一次。
+// 用法: ./openmole -s /path/to/soho_threshold_sensitivity.oms
+// ============================================================
+
+val PYTHON = "/Users/wusiyi/Documents/CASA/dis/venv/bin/python3"
+val ENTRY_SCRIPT = "/Users/wusiyi/Documents/CASA/dis/DATA/files/openmole_entry_thresholds.py"
+
+val scenario = Val[String]
+val seed = Val[Int]
+val stressThreshold = Val[Double]
+val congestionThreshold = Val[Double]
+val stressTriggerThreshold = Val[Double]
+val congestionTriggerThreshold = Val[Double]
+val landUseThreshold = Val[Double]
+
+val overdueRate = Val[Double]
+val pctOnPavement = Val[Double]
+val exposurePerDelivery = Val[Double]
+val severePerDelivery = Val[Double]
+val meanStress = Val[Double]
+val meanCongestion = Val[Double]
+val fullCompliance = Val[Double]
+val forcedMinorViolation = Val[Double]
+val activeViolation = Val[Double]
+val combinedHighRisk = Val[Double]
+val distancePerDelivery = Val[Double]
+
+val rawOutput = Val[String]
+
+val sohoModel = SystemExecTask(
+  command = Seq(PYTHON + " " + ENTRY_SCRIPT +
+    " ${scenario} ${seed} ${stressThreshold} ${congestionThreshold}" +
+    " ${stressTriggerThreshold} ${congestionTriggerThreshold} ${landUseThreshold}"),
+  stdOut = rawOutput
+) set (
+  (inputs, outputs) += (scenario, seed, stressThreshold, congestionThreshold,
+                         stressTriggerThreshold, congestionTriggerThreshold, landUseThreshold)
+)
+
+val parseResult = ScalaTask("""
+  val lastLine = rawOutput.trim.split("\n").last
+  val parts = lastLine.trim.split(",")
+  val overdueRate = parts(0).toDouble
+  val pctOnPavement = parts(1).toDouble
+  val exposurePerDelivery = parts(2).toDouble
+  val severePerDelivery = parts(3).toDouble
+  val meanStress = parts(4).toDouble
+  val meanCongestion = parts(5).toDouble
+  val fullCompliance = parts(6).toDouble
+  val forcedMinorViolation = parts(7).toDouble
+  val activeViolation = parts(8).toDouble
+  val combinedHighRisk = parts(9).toDouble
+  val distancePerDelivery = parts(10).toDouble
+""") set (
+  inputs += rawOutput,
+  (inputs, outputs) += (scenario, seed, stressThreshold, congestionThreshold,
+                         stressTriggerThreshold, congestionTriggerThreshold, landUseThreshold),
+  outputs += (overdueRate, pctOnPavement, exposurePerDelivery, severePerDelivery,
+              meanStress, meanCongestion, fullCompliance, forcedMinorViolation,
+              activeViolation, combinedHighRisk, distancePerDelivery)
+)
+
+val nSeeds = 10
+
+// 基准值：0.5 / 0.5 / 0.7 / 0.8 / 0.8（跟 model.py 的默认值一致）
+val sampling =
+  // 基准配置（只跑一次）
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  // stress_threshold: 低/高
+  ((scenario is "S2_adverse") x (stressThreshold is 0.4) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (stressThreshold is 0.6) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  // congestion_threshold: 低/高
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.4) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.6) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  // stress_trigger_threshold: 低/高
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.6) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.8) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  // congestion_trigger_threshold: 低/高
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.7) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.9) x
+   (landUseThreshold is 0.8) x (seed in (0 until nSeeds))) ++
+  // land_use_threshold: 低/高
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.7) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (stressThreshold is 0.5) x (congestionThreshold is 0.5) x
+   (stressTriggerThreshold is 0.7) x (congestionTriggerThreshold is 0.8) x
+   (landUseThreshold is 0.9) x (seed in (0 until nSeeds)))
+
+val csvHook = AppendToCSVFileHook(workDirectory / "threshold_sensitivity_results.csv")
+
+DirectSampling(
+  evaluation = sohoModel -- (parseResult hook csvHook),
+  sampling = sampling
+) on LocalEnvironment(4)

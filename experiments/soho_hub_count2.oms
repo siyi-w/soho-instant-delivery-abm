@@ -1,0 +1,75 @@
+// ============================================================
+// 暗厨房"数量"剂量曲线 —— 补点(N=6/7/8)，定位 N=5→N=10 之间的断层位置
+// 用法: ./openmole -s /path/to/soho_hub_count2.oms
+// ============================================================
+
+val PYTHON = "/Users/wusiyi/Documents/CASA/dis/venv/bin/python3"
+val ENTRY_SCRIPT = "/Users/wusiyi/Documents/CASA/dis/DATA/files/openmole_entry.py"
+
+val scenario = Val[String]
+val seed = Val[Int]
+val addParking = Val[Int]
+val microHubs = Val[Int]
+val hubShare = Val[Double]
+val batchProbability = Val[Double]
+
+val overdueRate = Val[Double]
+val pctOnPavement = Val[Double]
+val exposurePerDelivery = Val[Double]
+val severePerDelivery = Val[Double]
+val meanStress = Val[Double]
+val meanCongestion = Val[Double]
+val fullCompliance = Val[Double]
+val forcedMinorViolation = Val[Double]
+val activeViolation = Val[Double]
+val combinedHighRisk = Val[Double]
+val distancePerDelivery = Val[Double]
+
+val rawOutput = Val[String]
+
+val sohoModel = SystemExecTask(
+  command = Seq(PYTHON + " " + ENTRY_SCRIPT +
+    " ${scenario} ${seed} ${addParking} ${microHubs} ${hubShare} ${batchProbability}"),
+  stdOut = rawOutput
+) set (
+  (inputs, outputs) += (scenario, seed, addParking, microHubs, hubShare, batchProbability)
+)
+
+val parseResult = ScalaTask("""
+  val lastLine = rawOutput.trim.split("\n").last
+  val parts = lastLine.trim.split(",")
+  val overdueRate = parts(0).toDouble
+  val pctOnPavement = parts(1).toDouble
+  val exposurePerDelivery = parts(2).toDouble
+  val severePerDelivery = parts(3).toDouble
+  val meanStress = parts(4).toDouble
+  val meanCongestion = parts(5).toDouble
+  val fullCompliance = parts(6).toDouble
+  val forcedMinorViolation = parts(7).toDouble
+  val activeViolation = parts(8).toDouble
+  val combinedHighRisk = parts(9).toDouble
+  val distancePerDelivery = parts(10).toDouble
+""") set (
+  inputs += rawOutput,
+  (inputs, outputs) += (scenario, seed, addParking, microHubs, hubShare, batchProbability),
+  outputs += (overdueRate, pctOnPavement, exposurePerDelivery, severePerDelivery,
+              meanStress, meanCongestion, fullCompliance, forcedMinorViolation,
+              activeViolation, combinedHighRisk, distancePerDelivery)
+)
+
+val nSeeds = 10
+
+val sampling =
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 6) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 7) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 8) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds)))
+
+val csvHook = AppendToCSVFileHook(workDirectory / "hub_count_results2.csv")
+
+DirectSampling(
+  evaluation = sohoModel -- (parseResult hook csvHook),
+  sampling = sampling
+) on LocalEnvironment(4)

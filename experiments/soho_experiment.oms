@@ -1,0 +1,105 @@
+// ============================================================
+// Soho Delivery ABM — 正式实验矩阵(10-seed)
+// 用法: ./openmole -s /path/to/soho_experiment.oms
+// 前提: openmole_entry.py / model.py / agents.py / environment.py /
+//       interventions.py 放在同一个文件夹，且本机 python3 环境已装好依赖
+// ============================================================
+
+val PYTHON = "/Users/wusiyi/Documents/CASA/dis/venv/bin/python3"
+val ENTRY_SCRIPT = "/Users/wusiyi/Documents/CASA/dis/DATA/files/openmole_entry.py"
+
+// ---- 输入变量 ----
+val scenario = Val[String]
+val seed = Val[Int]
+val addParking = Val[Int]
+val microHubs = Val[Int]
+val hubShare = Val[Double]
+val batchProbability = Val[Double]
+
+// ---- 输出变量 ----
+val overdueRate = Val[Double]
+val pctOnPavement = Val[Double]
+val exposurePerDelivery = Val[Double]
+val severePerDelivery = Val[Double]
+val meanStress = Val[Double]
+val meanCongestion = Val[Double]
+val fullCompliance = Val[Double]
+val forcedMinorViolation = Val[Double]
+val activeViolation = Val[Double]
+val combinedHighRisk = Val[Double]
+val distancePerDelivery = Val[Double]
+
+// ---- 原始一行 CSV 结果 ----
+val rawOutput = Val[String]
+
+// ---- 直接调用本机 python3,不经过任何容器 ----
+val sohoModel = SystemExecTask(
+  command = Seq(PYTHON + " " + ENTRY_SCRIPT +
+    " ${scenario} ${seed} ${addParking} ${microHubs} ${hubShare} ${batchProbability}"),
+  stdOut = rawOutput
+) set (
+  (inputs, outputs) += (scenario, seed, addParking, microHubs, hubShare, batchProbability)
+)
+
+// ---- 解析 stdout 最后一行(前面可能夹着 environment.py 的日志) ----
+val parseResult = ScalaTask("""
+  val lastLine = rawOutput.trim.split("\n").last
+  val parts = lastLine.trim.split(",")
+  val overdueRate = parts(0).toDouble
+  val pctOnPavement = parts(1).toDouble
+  val exposurePerDelivery = parts(2).toDouble
+  val severePerDelivery = parts(3).toDouble
+  val meanStress = parts(4).toDouble
+  val meanCongestion = parts(5).toDouble
+  val fullCompliance = parts(6).toDouble
+  val forcedMinorViolation = parts(7).toDouble
+  val activeViolation = parts(8).toDouble
+  val combinedHighRisk = parts(9).toDouble
+  val distancePerDelivery = parts(10).toDouble
+""") set (
+  inputs += rawOutput,
+  (inputs, outputs) += (scenario, seed, addParking, microHubs, hubShare, batchProbability),
+  outputs += (overdueRate, pctOnPavement, exposurePerDelivery, severePerDelivery,
+              meanStress, meanCongestion, fullCompliance, forcedMinorViolation,
+              activeViolation, combinedHighRisk, distancePerDelivery)
+)
+
+// ---- 实验设计: S1基线 + I0-I3矩阵 + hub_share剂量曲线 + batch_probability ----
+val nSeeds = 10
+
+val sampling =
+  // S1 基线(核心对比用)
+  ((scenario is "S1_baseline") x (addParking is 0) x (microHubs is 0) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  // I0 对照组
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 0) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  // I1 仅停车点
+  ((scenario is "S2_adverse") x (addParking is 15) x (microHubs is 0) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  // I2 仅暗厨房(hub_share=0.5，正式矩阵代表值)
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 5) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  // I3 停车点+暗厨房
+  ((scenario is "S2_adverse") x (addParking is 15) x (microHubs is 5) x
+   (hubShare is 0.5) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  // hub_share 剂量曲线(0.5 已在 I2 里覆盖，这里补另外四个点)
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 5) x
+   (hubShare is 0.0) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 5) x
+   (hubShare is 0.25) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 5) x
+   (hubShare is 0.75) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 5) x
+   (hubShare is 1.0) x (batchProbability is 0.0) x (seed in (0 until nSeeds))) ++
+  // batch_probability = 0.3(0点已在 I0 里覆盖)
+  ((scenario is "S2_adverse") x (addParking is 0) x (microHubs is 0) x
+   (hubShare is 0.5) x (batchProbability is 0.3) x (seed in (0 until nSeeds)))
+
+// ---- 汇总所有结果到一张 CSV,本地4核并行跑 ----
+val csvHook = AppendToCSVFileHook(workDirectory / "all_results.csv")
+
+DirectSampling(
+  evaluation = sohoModel -- (parseResult hook csvHook),
+  sampling = sampling
+) on LocalEnvironment(4)
