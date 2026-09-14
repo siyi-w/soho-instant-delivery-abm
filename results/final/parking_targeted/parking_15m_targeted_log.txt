@@ -1,0 +1,84 @@
+  [env] 路网已投影：EPSG:32630
+  [env] 路网节点 5313，路段 11210
+  [env] 路段宽度：224 条来自 OSM width 标签，其余用类型默认值
+  [env] POI 3477 个吸附到 1340 个节点
+  [env] land_use_mix：均值 0.09，最大 1.00
+  [env] activity landuse：604 个地块（类别：['commercial', 'education', 'governmental', 'religious', 'residential', 'retail']）
+  [env] activity_density：均值 0.05，最大 1.00
+  [env] 装卸区 39 个吸附到 24 个节点
+  [env] 自行车停放 1523 个吸附到 915 个节点
+  [env] 边界已加载并投影到 EPSG:32630
+  dose=0 seed=42: trigger_rate=6.0256%
+  dose=0 seed=1: trigger_rate=6.7602%
+  dose=0 seed=7: trigger_rate=6.1856%
+  dose=0 seed=99: trigger_rate=6.4408%
+  dose=0 seed=123: trigger_rate=6.1438%
+  dose=1 seed=42: trigger_rate=5.6200%
+  dose=1 seed=1: trigger_rate=5.8576%
+  dose=1 seed=7: trigger_rate=5.8543%
+  dose=1 seed=99: trigger_rate=5.5329%
+  dose=1 seed=123: trigger_rate=5.5080%
+  dose=3 seed=42: trigger_rate=6.1569%
+  dose=3 seed=1: trigger_rate=5.9617%
+  dose=3 seed=7: trigger_rate=5.2917%
+  dose=3 seed=99: trigger_rate=5.7243%
+  dose=3 seed=123: trigger_rate=5.7035%
+  dose=5 seed=42: trigger_rate=6.1569%
+  dose=5 seed=1: trigger_rate=5.9617%
+  dose=5 seed=7: trigger_rate=5.2917%
+  dose=5 seed=99: trigger_rate=5.7243%
+  dose=5 seed=123: trigger_rate=5.7035%
+  dose=8 seed=42: trigger_rate=4.3361%
+  dose=8 seed=1: trigger_rate=4.4740%
+  dose=8 seed=7: trigger_rate=4.0611%
+  dose=8 seed=99: trigger_rate=4.7853%
+  dose=8 seed=123: trigger_rate=4.5373%
+  dose=12 seed=42: trigger_rate=3.4758%
+  dose=12 seed=1: trigger_rate=3.4741%
+  dose=12 seed=7: trigger_rate=3.6574%
+  dose=12 seed=99: trigger_rate=3.4738%
+  dose=12 seed=123: trigger_rate=4.0501%
+  dose=15 seed=42: trigger_rate=3.1433%
+  dose=15 seed=1: trigger_rate=3.2129%
+  dose=15 seed=7: trigger_rate=3.0186%
+  dose=15 seed=99: trigger_rate=2.9262%
+  dose=15 seed=123: trigger_rate=3.0430%
+  dose=20 seed=42: trigger_rate=2.0685%
+  dose=20 seed=1: trigger_rate=2.5709%
+  dose=20 seed=7: trigger_rate=2.6188%
+  dose=20 seed=99: trigger_rate=1.6186%
+  dose=20 seed=123: trigger_rate=2.2285%
+  dose=25 seed=42: trigger_rate=1.3645%
+  dose=25 seed=1: trigger_rate=1.2922%
+  dose=25 seed=7: trigger_rate=1.1447%
+  dose=25 seed=99: trigger_rate=1.2073%
+  dose=25 seed=123: trigger_rate=1.5928%
+  dose=30 seed=42: trigger_rate=0.6822%
+  dose=30 seed=1: trigger_rate=0.7198%
+  dose=30 seed=7: trigger_rate=0.7759%
+  dose=30 seed=99: trigger_rate=0.5682%
+  dose=30 seed=123: trigger_rate=0.7242%
+  dose=36 seed=42: trigger_rate=0.1928%
+  dose=36 seed=1: trigger_rate=0.2388%
+  dose=36 seed=7: trigger_rate=0.2058%
+  dose=36 seed=99: trigger_rate=0.1649%
+  dose=36 seed=123: trigger_rate=0.1667%
+  dose=50 seed=42: trigger_rate=0.1928%
+  dose=50 seed=1: trigger_rate=0.2388%
+  dose=50 seed=7: trigger_rate=0.2058%
+  dose=50 seed=99: trigger_rate=0.1649%
+  dose=50 seed=123: trigger_rate=0.1667%
+
+========== 15米停车干预精细剂量扫描（靶向选址修复版, S2_adverse, 5-seed）==========
+dose=   0: land_use触发率=6.3112%, 范围=[6.0256%,6.7602%]
+dose=   1: land_use触发率=5.6745%, 范围=[5.5080%,5.8576%]
+dose=   3: land_use触发率=5.7676%, 范围=[5.2917%,6.1569%]
+dose=   5: land_use触发率=5.7676%, 范围=[5.2917%,6.1569%]
+dose=   8: land_use触发率=4.4387%, 范围=[4.0611%,4.7853%]
+dose=  12: land_use触发率=3.6263%, 范围=[3.4738%,4.0501%]
+dose=  15: land_use触发率=3.0688%, 范围=[2.9262%,3.2129%]
+dose=  20: land_use触发率=2.2210%, 范围=[1.6186%,2.6188%]
+dose=  25: land_use触发率=1.3203%, 范围=[1.1447%,1.5928%]
+dose=  30: land_use触发率=0.6941%, 范围=[0.5682%,0.7759%]
+dose=  36: land_use触发率=0.1938%, 范围=[0.1649%,0.2388%]
+dose=  50: land_use触发率=0.1938%, 范围=[0.1649%,0.2388%]
